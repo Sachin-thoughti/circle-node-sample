@@ -3,7 +3,8 @@ jobs:
   build:
     docker:
       — image: circleci/node:10.16    
+    working_directory: ~/circle-node-sample    
+    
     steps:
-      — checkout     
-      - run: frontend/npm install
-      - run: server/npm install
+      — checkout      
+      - run: npm install

@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>
-          Welcome to HAETEST frontend
+          Welcome to hae test frontend
         </p>
         
       </header>

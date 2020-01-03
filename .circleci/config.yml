@@ -3,6 +3,10 @@ jobs:
   build:
     docker:
       — image: circleci/node:10.16.3    
+    working_directory: ~/circle-node-sample
     steps:
       — checkout      
-      - run: echo "A first Hello"
+      - run: 
+            working_directory: ~/circle-node-sample/server
+            command: npm install
+            

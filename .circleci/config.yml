@@ -2,9 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      — image: circleci/node:10.16    
-    working_directory: ~/circle-node-sample    
-    
+      — image: circleci/node:10.16.3    
     steps:
       — checkout      
       - run: echo "A first Hello"

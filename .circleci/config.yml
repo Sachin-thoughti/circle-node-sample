@@ -7,8 +7,8 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - "SHA256:47f1oDjTuvXaylPQWyOvPzkFloz3Gd29aScqqnNaLrU schavan@primedimensions.com"
+            - "47f1oDjTuvXaylPQWyOvPzkFloz3Gd29aScqqnNaLrU"
       - run: npm install
       - deploy:
-          name: $(eval echo ${SSHACCESS} | cut -c1-17)
+          name: haeserver
           command: ssh -o "StrictHostKeyChecking no" $(eval echo ${SSHACCESS} | cut -c1-17) "cd /var/www/html/testDeploy/circle-node-sample; git pull; npm install; pm2 start ../../haePM2.config.js"

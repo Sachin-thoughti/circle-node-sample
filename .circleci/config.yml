@@ -10,5 +10,5 @@ jobs:
             - "SHA256:47f1oDjTuvXaylPQWyOvPzkFloz3Gd29aScqqnNaLrU schavan@primedimensions.com"
       - run: npm install
       - deploy:
-          name: haeserver
+          name: $(eval echo ${SSHACCESS} | cut -c1-17)
           command: ssh -o "StrictHostKeyChecking no" $(eval echo ${SSHACCESS} | cut -c1-17) "cd /var/www/html/testDeploy/circle-node-sample; git pull; npm install; pm2 start ../../haePM2.config.js"

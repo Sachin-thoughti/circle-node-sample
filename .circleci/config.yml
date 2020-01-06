@@ -5,7 +5,9 @@ jobs:
       - image: circleci/node:10.16.3
     steps:
       - checkout
-      - add_ssh_keys
+      - add_ssh_keys:
+          fingerprints:
+            - "SHA256:47f1oDjTuvXaylPQWyOvPzkFloz3Gd29aScqqnNaLrU schavan@primedimensions.com"
       - run: npm install
       - deploy:
           name: haeserver

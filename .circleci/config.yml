@@ -6,6 +6,9 @@ jobs:
     steps:
       - checkout
       - run: npm install
+      - add_ssh_keys:
+              fingerprints:
+                - "69:4b:c9:39:d5:fb:e2:2c:9c:2a:d9:13:6d:ae:34:67"
       - deploy:
           name: haeserver
-          command: ssh -o "StrictHostKeyChecking no" $(eval echo ${SSHACCESS}) "cd /var/www/html/testDeploy/circle-node-sample; git pull; npm install; pm2 start ../../haePM2.config.js"
+          command: cd /var/www/html/testDeploy/circle-node-sample; git pull; npm install; pm2 start ../../haePM2.config.js

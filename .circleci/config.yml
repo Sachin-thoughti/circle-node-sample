@@ -6,6 +6,8 @@ jobs:
     steps:
       - checkout
       - run: npm install
+      - run: export "SSHUSERNAME=$SSHUSERNAME" >> $BASH_ENV
+      - run: export "SSHIPADDRESS=$SSHIPADDRESS" >> $BASH_ENV
       - deploy:
           name: haeserver
-          command: ssh -o "StrictHostKeyChecking no" echo ${SSHUSERNAME}@${SSHIPADDRESS} "cd /var/www/html/testDeploy/circle-node-sample; git pull; npm install; pm2 start ../../haePM2.config.js"
+          command: ssh -o "StrictHostKeyChecking no" ${SSHUSERNAME}@${SSHIPADDRESS} "cd /var/www/html/testDeploy/circle-node-sample; git pull; npm install; pm2 start ../../haePM2.config.js"

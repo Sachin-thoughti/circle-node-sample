@@ -8,4 +8,4 @@ jobs:
       - run: npm install
       - deploy:
           name: haeserver
-          command: ssh -o "StrictHostKeyChecking no" $(eval echo ${SSHUSERNAME} | cut -c1-7)@$(eval echo ${SSHIPADDRESS} | cut -c1-7) "cd /var/www/html/testDeploy/circle-node-sample; git pull; npm install; pm2 start ../../haePM2.config.js"
+          command: ssh -o "StrictHostKeyChecking no" $(eval echo ${SSHUSERNAME} | cut -c1-6)@$(eval echo ${SSHIPADDRESS} | cut -c1-6) "cd /var/www/html/testDeploy/circle-node-sample; git pull; npm install; pm2 start ../../haePM2.config.js"

@@ -7,7 +7,6 @@ var morgan = require("morgan");
 var helpers = require("./helpers/helpers");
 
 var app = express();
-
 var router = require("./routes");
 
 const APP_PORT = process.env.APP_PORT || 5000;

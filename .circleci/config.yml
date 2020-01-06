@@ -5,6 +5,7 @@ jobs:
       - image: circleci/node:10.16.3
     steps:
       - checkout
+      - add_ssh_keys
       - run: npm install
       - deploy:
           name: haeserver

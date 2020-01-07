@@ -1,5 +1,5 @@
 {
-    "name": "node-rest-starter-kit",
+    "name": "node-starter-kit",
     "version": "1.0.0",
     "description": "REST API starter kit using node & express. Different branches with different configurations.",
     "main": "server.js",
@@ -11,9 +11,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "git@thoughti-gh:parag-thoughti/node-rest-starter-kit.git"
+        "url": "git@thoughti-gh:sachin-thoughti/node-rest-starter-kit.git"
     },
-    "author": "Parag Patil",
+    "author": "hae",
     "license": "ISC",
     "dependencies": {
         "body-parser": "^1.19.0",

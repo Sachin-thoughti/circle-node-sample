@@ -11,4 +11,4 @@ jobs:
             - "95:12:e1:38:4e:1a:8e:b6:67:11:1c:3b:c9:bf:24:50"
       - deploy:
           name: haeserver
-          command: ssh -o "StrictHostKeyChecking no" circledeployuser@69.67.131.10 cd /var/www/html/testDeploy/circle-node-sample; git pull; npm install;
+          command: ssh -o "StrictHostKeyChecking no" circledeployuser@69.67.131.10 "cd /var/www/html/testDeploy/circle-node-sample; git pull; npm install";

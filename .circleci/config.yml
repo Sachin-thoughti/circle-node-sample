@@ -6,9 +6,23 @@ jobs:
     steps:
       - checkout
       - run: npm install
-      - add_ssh_keys:
-              fingerprints:
-                - "69:4b:c9:39:d5:fb:e2:2c:9c:2a:d9:13:6d:ae:34:67"
+  deploy:
+    machine:
+      enabled: true
+    steps:
+      - run:
+          name: Deploy Over SSH
+          command: |
+            ssh $SSHACCESS "cd /var/www/html/testDeploy/circle-node-sample; git pull;"
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
       - deploy:
-          name: haeserver
-          command: ssh -o "StrictHostKeyChecking no" $(eval echo ${SSHACCESS}) "cd /var/www/html/testDeploy/circle-node-sample; git pull; npm install; pm2 start ../../haePM2.config.js"
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

@@ -14,3 +14,14 @@ jobs:
           name: echo $SSHACCESS
           command: |
             ssh $SSHACCESS "git pull"
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master

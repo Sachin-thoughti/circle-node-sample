@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
   return helpers.generateApiResponse(
     res,
     req,
-    "Server is up and running.",
+    "Server is up and running test.",
     200,
     []
   );

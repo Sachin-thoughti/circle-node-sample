@@ -28,4 +28,4 @@ workflows:
             - build
           filters:
             branches:
-              only: testserver
+              only: testbranch

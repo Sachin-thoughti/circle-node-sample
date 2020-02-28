@@ -57,7 +57,7 @@ router.all("/status", (req, res) => {
   return helpers.generateApiResponse(
     res,
     req,
-    "Server is up and running.",
+    "Server is up and running....",
     200,
     []
   );

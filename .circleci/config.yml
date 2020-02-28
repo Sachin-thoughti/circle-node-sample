@@ -16,7 +16,7 @@ jobs:
       - run:
           name: Deploy to test server
           command: |
-            ssh -o "StrictHostKeyChecking no" circledeployuser@69.67.131.10 "cd /var/www/html/testDeploy/circle-node-sample; git pull; npm install";
+            ssh -o "StrictHostKeyChecking no" circledeployuser@47.180.57.7 "cd /var/www/html/testDeploy/circle-node-sample; git pull; npm install";
 
 workflows:
   version: 2
